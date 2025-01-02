@@ -1,0 +1,60 @@
+{
+  "name": "minimal-node-server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A lightweight Node.js server with minimal dependencies, featuring secure headers, rate limiting, PostgreSQL integration, and Datadog metrics.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "docker:build": "docker build -t minimal-node-server .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env minimal-node-server",
+    "metrics:test": "node scripts/test-metrics.js"
+  },
+  "keywords": [
+    "api",
+    "datadog",
+    "docker",
+    "drizzle-orm",
+    "express-rate-limit",
+    "helmet",
+    "http",
+    "lightweight",
+    "low-dependency",
+    "metrics",
+    "minimal",
+    "monitoring",
+    "node",
+    "polka",
+    "postgresql",
+    "production-ready",
+    "rate-limiting",
+    "secure",
+    "server",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obartra/minimal-node-server.git"
+  },
+  "author": "Oscar Bartra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/obartra/minimal-node-server/issues"
+  },
+  "homepage": "https://github.com/obartra/minimal-node-server#readme",
+  "dependencies": {
+    "drizzle-orm": "^0.38.3",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1",
+    "polka": "^0.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.3",
+    "@types/pg": "^8.11.10",
+    "@types/polka": "^0.5.7",
+    "typescript": "^5.7.2"
+  }
+}
